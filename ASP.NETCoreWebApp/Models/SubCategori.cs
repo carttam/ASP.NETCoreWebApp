@@ -9,10 +9,10 @@ namespace ASP.NETCoreWebApp.Models
         public int SubCategoriID { get; set; }
         [DataType(DataType.Text)]
         public string title {  get; set; }
-        [Key]
-        public int categori_id { get; set; }
+        public int CategoriID { get; set; }
         [DataType(DataType.ImageUrl)]
         public string image { get; set; }
         public Categori Categori { get; set; }
+        public ICollection<Models.Object> Objects { get; set; }
     }
 }

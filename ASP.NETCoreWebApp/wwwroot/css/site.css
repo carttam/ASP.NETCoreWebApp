@@ -69,3 +69,42 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.overflow-elp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Basket
+-------------------------------------------------- */
+
+.basket {
+    position: fixed !important;
+    bottom: 5% !important;
+    z-index: 999 !important;
+    right: 2% !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 25px;
+    color: #f00;
+}
+
+/* Customs
+-------------------------------------------------- */
+.w-225-p-7 {
+    width: 225px;
+    padding: 7px;
+}
+.w-100-center-mt-7{
+    width: 100%;
+    text-align: center;
+    margin-top: 7px;
+}
+.dup-price {
+    color: #d30000;
+    text-decoration-line: line-through;
+}

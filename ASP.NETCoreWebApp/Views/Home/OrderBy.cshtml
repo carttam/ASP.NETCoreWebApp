@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ASP.NETCoreWebApp.Models.Object>
+ @{
+    Layout = null;
+}
+@foreach (var obj in Model)
+{
+    <div class="col-md-4 text-center col-sm-6 col-xs-12">
+        <div class="thumbnail product-box">
+            <img src="~/img/dummyimg.png" alt="" />
+            <div class="caption">
+                <h3><a href="#">@obj.title</a></h3>
+                <p>
+                    Price : <strong>$ @string.Format("{0:#,0.000}",(obj.price - (obj.price * obj.discount / 100.0f)))</strong><br />
+                    <strong class="dup-price">$ @string.Format("{0:#,0.000}",obj.price)</strong>
+                </p>
+                <p class="overflow-elp">
+                    @obj.description No Description
+                </p>
+                <p>
+                    <a class="btn btn-success" role="button" onclick="addToBasket(@obj.ObjectID)">Add To Cart</a>
+                    @if (obj.Attribute != null)
+                    {
+                        <a class="btn btn-primary" role="button" onclick="displayDetailModal(@obj.AttributeID)">See Details</a>
+                    }
+                </p>
+            </div>
+        </div>
+    </div>
+}
+<!-- /.col -->

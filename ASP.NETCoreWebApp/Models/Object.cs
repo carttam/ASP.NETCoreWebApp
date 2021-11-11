@@ -15,13 +15,14 @@ namespace ASP.NETCoreWebApp.Models
         public string image { get; set; }
         [DataType(DataType.Currency)]
         public double price { get; set; }
-        [Range(0,100)]
+        [Range(0, 100)]
         public int discount { get; set; }
-        [Key]
-        public int brand_id { get; set; }
-        public Brand brand { get; set; }
-        [Key]
-        public int? attribute_id { get; set; }
+        public int BrandID { get; set; }
+        public Brand Brand { get; set; }
+        public int? AttributeID { get; set; }
         public Attribute Attribute { get; set; }
+        [Required]
+        public SubCategori SubCategori { get; set; }
+        public ICollection<Sell> Sells{ get; set; }
     }
 }

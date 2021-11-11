@@ -13,6 +13,6 @@ namespace ASP.NETCoreWebApp.Models
         public string website { get; set; }
         [DataType(DataType.ImageUrl)]
         public string icon { get; set; }
-        public Object Object { get; set; }
+        public ICollection<Object> Object { get; set; }
     }
 }

@@ -1,0 +1,54 @@
+﻿@model ASP.NETCoreWebApp.Models.User
+@using (Html.BeginForm("SignUp", "home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.username, "", new { @class = "text-danger"})
+
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.email, "", new { @class = "text-danger"})
+
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.first_name, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.first_name, "", new { @class = "text-danger"})
+
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.last_name, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.last_name, "", new { @class = "text-danger"})
+
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.address, "", new { @class = "text-danger"})
+
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.phone_number, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.phone_number, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.phone_number, "", new { @class = "text-danger"})
+
+    <div class="input-group input-group-sm">
+        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "input-group-addon" })
+        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @Html.ValidationMessageFor(model => Model.password, "", new { @class = "text-danger" })
+
+    <div class="input-group input-group-sm w-100-center-mt-7">
+        <input class="btn btn-primary" type="submit" value="SignUp" />
+    </div>
+
+    @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+}
